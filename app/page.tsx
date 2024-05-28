@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import styles from "./index.module.css";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import { faFaceSmile, faHeart } from "@fortawesome/free-solid-svg-icons";
 const messages = [
   "You are my sunshine.",
   "You light up my life.",
@@ -25,14 +25,14 @@ const messages = [
   "You are my dream come true.",
   "You are the love of my life.",
   "I am forever grateful for your love.",
-  "You are my safe place.",
+  "Am in love with you in scary proportions, seeing you turn from a girl to a lady as I watch is one of the most fulfilling things in our relationship.💖",
   "Your love lights up my world.",
   "You are my one and only.",
   "I am so in love with you.",
-  "You are the best thing that ever happened to me."
+  "You are the best thing that ever happened to me.",
 ];
 
-const images = ["/Chris.png", "/Jose.png", "/Tom.png"];
+const images = ["/baddie.jpg", "/chum.jpg", "/Chumchum.jpg"];
 
 const IndexPage = () => {
   const [daysLeft, setDaysLeft] = useState(0);
@@ -47,7 +47,7 @@ const IndexPage = () => {
     const daysLeft = Math.ceil(timeDifference / (1000 * 60 * 60 * 24));
     setDaysLeft(daysLeft);
 
-    const messageIndex = messages.length - 1;
+    const messageIndex = daysLeft;
     const imageIndex = images.length - 1;
 
     if (messageIndex >= 0 && messageIndex < messages.length) {
@@ -59,8 +59,36 @@ const IndexPage = () => {
 
   return (
     <div className={styles.container}>
+      {/* <div className={styles.bg}>
+      <Image
+          className={styles.backgroundimage}
+          width={800}
+          height={1000}
+          src={"/bg.jpg"}
+          alt="background-img"
+        />
+      </div> */}
+      <div className={styles.flowers}>
+        <Image
+          className={styles.flowerimage}
+          width={800}
+          height={1000}
+          src={"/flowers.png"}
+          alt="flower"
+        />
+        <Image
+          className={styles.flowerimage}
+          width={800}
+          height={1000}
+          src={"/flowers.png"}
+          alt="flower"
+        />
+      </div>
       <div className={styles.countdown}>
-        <h1>{daysLeft} days until your birthday!<FontAwesomeIcon icon={faHeart}/></h1>
+        <h1>
+          {daysLeft} days until your birthday!
+          <FontAwesomeIcon icon={faHeart} />
+        </h1>
         <p className={styles.message}>{currentMessage}</p>
         <Image
           className={styles.image}
@@ -69,11 +97,17 @@ const IndexPage = () => {
           src={currentImage}
           alt="Thoughtful"
         />
-        <div className={styles.flipCard}>
+        {/* <div className={styles.flipCard}>
           <motion.div whileHover={{ rotateY: 180 }} whileTap={{ scale: 0.9 }}>
             <div className={styles.cardFront}>Click Me!</div>
             <div className={styles.cardBack}>{currentLove}</div>
           </motion.div>
+        </div> */}
+        <div className={styles.musicPlayer}>
+          <audio controls>
+            <source src="/path/to/your/music.mp3" type="audio/mpeg" />
+            Your browser does not support the audio element.
+          </audio>
         </div>
       </div>
     </div>

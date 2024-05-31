@@ -1,0 +1,26 @@
+.player {
+    background: #ecf8f8;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.controls {
+    margin-top: 10px;
+}
+
+.player button {
+    background-color: #191141;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.player button:hover {
+    background-color: #442070;
+}

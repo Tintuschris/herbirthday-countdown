@@ -27,22 +27,22 @@ const messages = [
 ];
 
 const images = [
-  "/Dinner.jpg",
-  "/MenU.jpg",
-  "/sunshine.jpg",
-  "/hey.jpg",
-  "/hello.jpg",
-  "/TBT.jpg",
-  "/Loves.jpg",
-  "/baddie-II.jpg",
-  "/shiie.jpg",
-  "/Baddie.jpg",
-  "/dimple.jpg",
-  "/office.jpg",
-  "/Dinner.jpg",
-  "/Pearl.jpg",
-  "/Diva.jpg",
   "/calm.jpg",
+  "/Diva.jpg",
+  "/Pearl.jpg",
+  "/Dinner.jpg",
+  "/office.jpg",
+  "/dimple.jpg",
+  "/Baddie.jpg",
+  "/shiie.jpg",
+  "/baddie-II.jpg",
+  "/Loves.jpg",
+  "/TBT.jpg",
+  "/hello.jpg",
+  "/hey.jpg",
+  "/sunshine.jpg",
+  "/MenU.jpg",
+  "/Dinner.jpg"
 ];
 const musicFiles = ["/music1.mp3", "/music2.mp3", "/music3.mp3"];
 
@@ -61,7 +61,7 @@ const IndexPage = () => {
     setDaysLeft(daysLeft);
 
     const messageIndex = daysLeft % messages.length;
-    const imageIndex = (daysLeft - 1) % images.length;
+    const imageIndex = daysLeft;
     // const musicIndex = daysLeft % musicFiles.length;
     const musicIndex = musicFiles.length - 1;
 

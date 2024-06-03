@@ -20,7 +20,7 @@ const MusicPlayer = () => {
     return (
         <div className={styles.player}>
             <audio ref={audioRef} controls>
-                <source src="/music1.mp3" type="audio/mp3" />
+                <source src="/music3.mp3" type="audio/mp3" />
                 Your browser does not support the audio element.
             </audio>
             <div className={styles.controls}>

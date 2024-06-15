@@ -4,15 +4,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* justify-content: center; */
   min-height: 180vh;
-  background: #f0f0f0;
+  background: linear-gradient(to bottom, #ffe3e3, #ffc1c1);
   font-family: Arial, sans-serif;
-  background-image: url(/bg.jpg);
-  background-position: center center;
-  background-size: cover;
+  position: relative;
+  overflow: hidden;
 }
-.bg{
+
+.bg {
   height: 100%;
   width: 100%;
   position: absolute;
@@ -21,25 +20,43 @@
   z-index: -1;
   object-fit: cover;
 }
-.backgroundimage{
+
+.backgroundimage {
   height: 100%;
   width: 100%;
   object-fit: cover;
-
 }
+
 .flowers {
   width: 100%;
-  color: #d08778;
   display: flex;
   justify-content: space-between;
   position: absolute;
-  top: 0;
+  top: 10px;
   z-index: 100;
-  font-size: 4rem;
+  animation: float 6s ease-in-out infinite;
 }
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
 .flowerimage {
-  height: auto;
   width: 100px;
+  height: auto;
+  animation: bounce 2s infinite alternate;
+}
+
+@keyframes bounce {
+  to {
+    transform: translateY(-20px);
+  }
 }
 
 .countdown {
@@ -48,32 +65,58 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 25%;
+  margin-top: 20%;
 }
+
 .countdown h1 {
   font-size: 3rem;
   margin-bottom: 10px;
-  color: #d08778;
+  background: linear-gradient(to right, #ff6b6b, #ffde6b);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-family: "Notable", sans-serif;
   font-weight: 400;
   font-style: normal;
+  text-shadow: 2px 2px #ffd700;
+  animation: glow 1.5s infinite alternate;
+}
+.countdown svg{
+  color: #ff4e50;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 2px 2px #ffd700;
+  }
+  to {
+    text-shadow: 4px 4px #ff6b6b;
+  }
 }
 
 .message {
   font-size: 1.5rem;
-  color: purple;
+  color: #ff4e50;
   font-style: italic;
-  padding-left: 5%;
-  padding-right: 5%;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .image {
-  width: auto;
-  height: auto; 
+  width: 90%;
+  height: auto;
   object-fit: cover;
   margin-top: 20px;
-  border-radius: 8px;
-  align-self: center;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transform: scale(1);
+  transition: transform 0.5s;
+}
+
+.image:hover {
+  transform: scale(1.05);
 }
 
 .flipCard {
@@ -94,6 +137,7 @@
   transition: transform 0.6s;
   transform-style: preserve-3d;
 }
+
 .flipCard div:last-of-type {
   height: 100px;
   border-radius: 0;
@@ -108,12 +152,13 @@
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
-  background: #d08778;
+  background: #ff6b6b;
   color: white;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .cardBack {
@@ -121,6 +166,7 @@
   color: #fff;
   transform: rotateY(180deg);
 }
+
 .musicplayer {
   width: 100%;
   display: flex;
@@ -132,7 +178,32 @@
 .musicPlayer audio {
   width: 80%;
   max-width: 600px;
-  
+}
+
+.confetti {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 200;
+}
+
+.confetti-piece {
+  position: absolute;
+  width: 10px;
+  height: 20px;
+  background: #ff6b6b;
+  animation: confetti-fall 3s linear infinite;
+}
+
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(-100vh) rotate(0);
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+  }
 }
 
 /* Responsive styles */
@@ -146,18 +217,16 @@
   }
 
   .flowerimage {
-    width: 100px;
+    width: 80px;
   }
 
   .countdown h1 {
-    font-size: 3rem;
-    font-weight: 500;
+    font-size: 2.5rem;
   }
 
   .message {
     font-size: 1rem;
-    font-style: italic;
-    padding: 1%;
+    padding: 5%;
   }
 
   .image {

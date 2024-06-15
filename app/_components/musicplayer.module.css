@@ -1,26 +1,74 @@
+/* musicplayer.module.css */
 .player {
-    background: #ecf8f8;
+    background: linear-gradient(to bottom, #ffde6b, #ff6b6b);
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.player:hover {
+    transform: scale(1.05);
 }
 
 .controls {
-    margin-top: 10px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
 }
 
 .player button {
-    background-color: #191141;
+    background: linear-gradient(to right, #ff6b6b, #ffde6b);
     color: white;
     border: none;
-    padding: 10px 20px;
+    padding: 12px 24px;
     margin: 5px;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1rem;
+    transition: background 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .player button:hover {
-    background-color: #442070;
+    background: linear-gradient(to right, #ffde6b, #ff6b6b);
+    transform: translateY(-3px);
+}
+
+.player button:active {
+    transform: translateY(1px);
+}
+
+.playButton {
+    background: linear-gradient(to right, #34d399, #3b82f6);
+}
+
+.playButton:hover {
+    background: linear-gradient(to right, #3b82f6, #34d399);
+}
+
+.pauseButton {
+    background: linear-gradient(to right, #f87171, #facc15);
+}
+
+.pauseButton:hover {
+    background: linear-gradient(to right, #facc15, #f87171);
+}
+
+.stopButton {
+    background: linear-gradient(to right, #ec4899, #8b5cf6);
+}
+
+.stopButton:hover {
+    background: linear-gradient(to right, #8b5cf6, #ec4899);
+}
+
+.player audio {
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
